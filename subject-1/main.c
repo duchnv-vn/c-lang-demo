@@ -8,10 +8,10 @@ void main()
 {
     printf("----- Start main function -----\n");
     char character = 'a';
-    // printf("%c\n", character);
+    printf("%c\n", character);
 
     char text[] = "Hello World!";
-    // printf("%s\n", text);
+    printf("%s\n", text);
 
     int intNumber = 10;
     long bigNumber = 99999L;
@@ -28,9 +28,9 @@ void main()
     // immutableVariable = 5; // Can not change value
 
     int a;
-    // printf("Type value of a: ");
-    // scanf("%d", &a); // Receive input value typing from console
-    // printf("Value of variable a: %d\n", a);
+    printf("Type value of a: ");
+    scanf("%d", &a); // Receive input value typing from console
+    printf("Value of variable a: %d\n", a);
 
     int b = 0;
     int c = b++; // Assign current value of b to c, then change b value = 1
@@ -40,6 +40,11 @@ void main()
     int d = ++b; // Change b value = 2, then assign current value of b to d
     printf("Value of b: %d\n", b);
     printf("Value of d: %d\n", d);
+
+    int e = 1;
+    int f = '1';
+    int isEqual = e == f;
+    printf("Is equal: %d\n", isEqual);
 
     printf("----- End main function -----\n");
 }
