@@ -32,7 +32,7 @@ char *convertHexaDecimalSymbol(int value)
 
 void decimalToHexaDecimal(int value)
 {
-    char *reverseResults[sizeof(int) * 4 + 1];
+    char *reverseResults[sizeof(int)];
     int quotient = value;
     int remainder;
     int count = 0;
