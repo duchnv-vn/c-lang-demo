@@ -1,3 +1,4 @@
+// Bài 3: Viết chương trình phân tích một số nguyên thành các thừa số nguyên tố.
 #include "stdio.h"
 
 void main()

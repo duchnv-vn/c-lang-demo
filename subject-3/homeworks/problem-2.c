@@ -1,3 +1,4 @@
+// Bài 2: Hãy viết chương trình tính tổng các chữ số của một số nguyên bất kỳ.
 #include "stdio.h"
 
 void main()

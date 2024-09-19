@@ -1,3 +1,4 @@
+// Bài 1: Viết chương trình chuyển đổi một số tự nhiên ở hệ cơ số 10 thành số ở hệ cơ số b bất kì (1< b≤ 24).
 #include "stdio.h"
 #include "string.h"
 #include "conio.h"
