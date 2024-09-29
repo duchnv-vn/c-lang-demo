@@ -33,7 +33,7 @@ void problem1(MatrixEleType matrix[rowNum][colNum])
             }
         }
     }
-    printf("\nProblem 2 result:\n");
+    printf("\nProblem 1 result:\n");
     printf("Max value: %d | Row: %d | Column: %d\n", maxValue, rowIndex, colIndex);
 }
 
@@ -112,7 +112,7 @@ void problem3_solution1(int matrix[rowNum][colNum])
 
 void problem3_solution2(int matrix[rowNum][colNum])
 {
-    printf("\nProblem 3 - solution 1 result:\n");
+    printf("\nProblem 3 - solution 2 result:\n");
 
     MatrixEleType matrixClone[rowNum][colNum];
     for (int i = 0; i < rowNum; i++)
