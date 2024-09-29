@@ -155,8 +155,8 @@ void main(void)
         }
     }
 
-    // problem1(matrix);
-    // problem2(matrix);
+    problem1(matrix);
+    problem2(matrix);
     problem3_solution1(matrix);
     problem3_solution2(matrix);
 }
