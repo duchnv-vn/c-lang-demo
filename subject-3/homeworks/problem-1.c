@@ -3,7 +3,6 @@
 #include "string.h"
 #include "conio.h"
 #include "math.h"
-#include "malloc.h"
 
 void intToString(int value, char *str)
 {
