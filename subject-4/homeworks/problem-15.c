@@ -9,16 +9,17 @@
 #include "stdlib.h"
 #include "string.h"
 
+typedef int MatrixEleType;
 int rowNum;
 int colNum;
 
 // ************************************************
 // 1. Tìm phần tử lớn nhất của ma trận cùng chỉ số của số đó.
-void problem1(int matrix[rowNum][colNum])
+void problem1(MatrixEleType matrix[rowNum][colNum])
 {
     int rowIndex = 0;
     int colIndex = 0;
-    int maxValue = matrix[rowIndex][colIndex];
+    MatrixEleType maxValue = matrix[rowIndex][colIndex];
 
     for (int i = 0; i < rowNum; i++)
     {
@@ -40,26 +41,34 @@ void problem1(int matrix[rowNum][colNum])
 //  2. Tìm và in ra các phần tử là số nguyên tố của ma trận (các phần tử không nguyên tố thì thay bằng số 0).
 void problem2(int matrix[rowNum][colNum])
 {
+    printf("\nProblem 2 result:\n");
+
+    MatrixEleType matrixClone[rowNum][colNum];
+    for (int i = 0; i < rowNum; i++)
+    {
+        memcpy(matrixClone[i], matrix[i], colNum * sizeof(MatrixEleType));
+    }
+
     for (int i = 0; i < rowNum; i++)
     {
         for (int j = 0; j < colNum; j++)
         {
             bool isPrime = true;
-            for (int k = 2; k < matrix[i][j]; k++)
+            for (MatrixEleType k = 2; k < matrixClone[i][j]; k++)
             {
-                if (matrix[i][j] % k == 0)
+                if (matrixClone[i][j] % k == 0)
                 {
-                    matrix[i][j] = 0;
+                    matrixClone[i][j] = 0;
                     isPrime = false;
                 }
             }
 
-            printf("\nProblem 2 result:\n");
             if (isPrime)
             {
-                printf("%d ", matrix[i][j]);
+                printf("%d ", matrixClone[i][j]);
             }
         }
+        printf("\n");
     }
 }
 
@@ -69,10 +78,10 @@ void problem3_solution1(int matrix[rowNum][colNum])
 {
     int compare(const void *a, const void *b)
     {
-        const int *pNumA = a;
-        const int *pNumB = b;
-        int numA = *pNumA;
-        int numB = *pNumB;
+        const MatrixEleType *pNumA = a;
+        const MatrixEleType *pNumB = b;
+        MatrixEleType numA = *pNumA;
+        MatrixEleType numB = *pNumB;
 
         return numA > numB
                    ? 1
@@ -81,17 +90,17 @@ void problem3_solution1(int matrix[rowNum][colNum])
                    : 0;
     };
 
-    int matrixClone[rowNum][colNum];
+    MatrixEleType matrixClone[rowNum][colNum];
     for (int i = 0; i < rowNum; i++)
     {
-        memcpy(matrixClone[i], matrix[i], colNum * sizeof(int));
+        memcpy(matrixClone[i], matrix[i], colNum * sizeof(MatrixEleType));
     }
 
     printf("\nProblem 3 - solution 1 result:\n");
 
     for (int i = 0; i < rowNum; i++)
     {
-        qsort(matrixClone[i], colNum, sizeof(int), compare);
+        qsort(matrixClone[i], colNum, sizeof(MatrixEleType), compare);
 
         for (int j = 0; j < colNum; j++)
         {
@@ -105,10 +114,10 @@ void problem3_solution2(int matrix[rowNum][colNum])
 {
     printf("\nProblem 3 - solution 1 result:\n");
 
-    int matrixClone[rowNum][colNum];
+    MatrixEleType matrixClone[rowNum][colNum];
     for (int i = 0; i < rowNum; i++)
     {
-        memcpy(matrixClone[i], matrix[i], colNum * sizeof(int));
+        memcpy(matrixClone[i], matrix[i], colNum * sizeof(MatrixEleType));
     }
 
     for (int i = 0; i < rowNum; i++)
@@ -144,7 +153,7 @@ void main(void)
     printf("\nEnter column number:\n");
     scanf("%d", &colNum);
 
-    int matrix[rowNum][colNum];
+    MatrixEleType matrix[rowNum][colNum];
     for (int i = 0; i < rowNum; i++)
     {
         printf("\nEnter elements of row %d:\n", i);
