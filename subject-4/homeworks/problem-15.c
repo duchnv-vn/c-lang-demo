@@ -160,7 +160,17 @@ void main(void)
         for (int j = 0; j < colNum; j++)
         {
             printf("\nElement %d: ", j);
-            scanf("%d", &matrix[i][j]);
+            bool isValid = true;
+            do
+            {
+                if (!isValid)
+                {
+                    printf("\nInvalid number, re-enter: ");
+                }
+
+                scanf("%d", &matrix[i][j]);
+                isValid = matrix[i][j] > 0 || matrix[i][j] < 100;
+            } while (!isValid);
         }
     }
 

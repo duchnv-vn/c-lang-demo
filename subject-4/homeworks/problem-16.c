@@ -122,10 +122,20 @@ void main(void)
     for (int i = 0; i < eleNum; i++)
     {
         printf("\nEnter number %d:\n", i);
-        scanf("%d", &arr[i]);
+        bool isValid = true;
+        do
+        {
+            if (!isValid)
+            {
+                printf("\nInvalid number, re-enter: ");
+            }
+
+            scanf("%d", &arr[i]);
+            isValid = arr[i] > 0 || arr[i] < 100;
+        } while (!isValid);
     }
 
-    // problem1(arr);
-    // problem2(arr);
+    problem1(arr);
+    problem2(arr);
     problem3(arr);
 }
