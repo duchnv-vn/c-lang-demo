@@ -23,6 +23,11 @@ void exercise1(void)
 
     do
     {
+        if (!isValidShapeId)
+        {
+            printf("Invalid shape id, re-enter:\n");
+        }
+
         scanf("%d", &shapeId);
         isValidShapeId = shapeId == 1 || shapeId == 2 || shapeId == 3;
     } while (!isValidShapeId);
@@ -56,6 +61,7 @@ void exercise1(void)
             {
                 printf("Invalid inputs, re-enter:\n");
             }
+
             printf("Enter side 1 number:\n");
             scanf("%f", &side1);
             printf("Enter side 2 number:\n");
